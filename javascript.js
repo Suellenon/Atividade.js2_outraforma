@@ -43,3 +43,52 @@ btn_olho.addEventListener('click',()=>{
     }
 
 })
+//q4
+const ipt_senha_repete =document.querySelector('#senha_repete')
+const span_erro = document.querySelector('#erro')
+ipt_senha_repete.addEventListener('input', ()=>{
+    if(ipt_senha.value != ipt_senha_repete.value){
+        ipt_senha_repete.style.outline= '1px solid red'
+        span_erro.style.display='block'
+        span_erro.innerHTML='As senhas são diferentes'
+
+    }else{
+        span_erro.style.display='none'
+        ipt_senha_repete.style.outline ='revert'
+    }
+})
+//q5
+const val1 = document.querySelector('#num1')
+const val2= document.querySelector('#num2')
+const result= document.querySelector('#resultado')
+
+function somar(){
+     res = Number(val1.value) + Number(val2.value)
+    result.innerHTML= res
+
+}
+function subtrair(){
+    res = Number(val1.value) - Number(val2.value)
+   result.innerHTML= res
+
+}
+function multiplicar(){
+    res = Number(val1.value) * Number(val2.value)
+   result.innerHTML= res
+
+}
+function dividir(){
+    try{
+        if(Number(val2.value)== 0){
+            throw Error("Não pode dividir por zero")
+        }else{
+            res=Number(val1.value) / Number(val2.value)
+            result.innerHTML= res
+        }
+    }catch (error){
+        result.innerHTML= error
+    }
+   
+
+}
+
